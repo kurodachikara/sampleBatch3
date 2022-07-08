@@ -1,6 +1,9 @@
 package jp.kuroda.sampleBatch3;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,13 +14,16 @@ public class SampleBatch3Controller {
 	private MemberService service;
 	
 	@GetMapping("")
-	public String index() {
+	public String index(@ModelAttribute MemberInfo memberInfo) {
 		return "index";
 	}
 	@PostMapping("register")
-	public String register(@ModelAttribute MemberInfo info) {
-		service.createMemberInfo(info);
-		return "redirect:/index";
+	public String register(@Valid @ModelAttribute MemberInfo memberInfo,BindingResult result ) {
+		if(result.hasErrors()) {
+			return "index";
+		}
+		service.createMemberInfo(memberInfo);
+		return "redirect:/";
 		
 	}
 }

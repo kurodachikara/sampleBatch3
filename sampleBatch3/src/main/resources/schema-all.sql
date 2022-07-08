@@ -112,10 +112,10 @@ INSERT INTO BATCH_JOB_SEQ (ID, UNIQUE_KEY) select * from (select 0 as ID, '0' as
 drop table if exists memberinfo;
 
 create table memberinfo(
-    id integer not null PRIMARY key,
-    username varcahr(60) not null,
-    mailaddress varchar(120) not null,
+    id integer PRIMARY KEY AUTO_INCREMENT,
+    username varchar(60) not null,
+    mailaddress varchar(80) not null,
     telnumber varchar(11) not null,
-    address varcahr(80) not null,
+    memberaddress varchar(80) not null,
 	flag boolean not null
 )

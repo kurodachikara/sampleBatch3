@@ -11,6 +11,6 @@ public class MemberService {
 	
 	@Transactional
 	public void createMemberInfo(MemberInfo info) {
-		repository.insert(info.getUsername(),info.getMailadress(),info.getTelNumber(),info.getAddress(),info.getFlag());
+		repository.insert(info.getUsername(),info.getMailaddress(),info.getTelNumber(),info.getMemberaddress(),info.getFlag());
 	}
 }

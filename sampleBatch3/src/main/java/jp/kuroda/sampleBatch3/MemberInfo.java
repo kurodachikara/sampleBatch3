@@ -25,11 +25,11 @@ public class MemberInfo {
 	@Email(message="正しいメールアドレスを入力してください")
 	@NotBlank(message="メールアドレスを入力してください")
 	@NotNull
-	private String mailadress;
+	private String mailaddress;
 	@NotNull
 	private String telNumber;
 	@NotNull
-	private String address;
+	private String memberaddress;
 	private Boolean flag;
 	
 }

@@ -5,11 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form th:action="@{/register}" method="post">
-	名前：<input type="text" name="name"><br>
-	メールアドレス：<input type="text" name="mail"><br>
-	電話番号:<input type="text" name="tel"><br>
-	住所:<input type="text" name="address"><br>
+<form action="/register" method="post" th:object="${memberInfo}">
+	名前：<input type="text" th:field="*{username}"><br>
+	<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+	メールアドレス：<input type="text" th:field="*{mailaddress}"><br>
+	電話番号:<input type="text" th:field="*{telNumber}"><br>
+	住所:<input type="text" th:field="*{memberaddress}"><br>
+	<input type="hidden" name="flag" value="true"/>
 	<input type="submit" value="登録">
 </form>
 </body>
