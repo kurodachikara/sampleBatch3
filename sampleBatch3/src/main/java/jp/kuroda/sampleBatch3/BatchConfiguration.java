@@ -58,14 +58,14 @@ public class BatchConfiguration {
 			
 			@Override
 			public void writeHeader(Writer writer) throws IOException {
-				writer.append("\"username\",\"mailaddress\"");
+				writer.append("\"id\",\"username\",\"mailaddress\",\"telnumber\",\"memberaddress\",\"flag\"");
 			}
 		});
 		writer.setLineAggregator(new CsvLineAggregator<MemberInfo>() {
 			{
 				setFieldExtractor(new BeanWrapperFieldExtractor<MemberInfo>() {
 					{
-						setNames(new String[] {"username","mailaddress"});
+						setNames(new String[] {"id","username","mailaddress","telNumber","memberaddress","flag"});
 					}
 				});
 			}

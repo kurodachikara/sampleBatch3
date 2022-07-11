@@ -1,1 +1,4 @@
-"username","mailaddress"
+"id","username","mailaddress","telnumber","memberaddress","flag"
+"1","黒田 親良","kuroda_chikara@outlook.jp","09083946457","北九州市八幡西区三ヶ森1-4-22","true"
+"2","chikara kuroda","kuroda_chikara@outlook.jp","09083946457","hukuoka","true"
+"3","hoge","sample@test.jp","1234567890","koko","true"
